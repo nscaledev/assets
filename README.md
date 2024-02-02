@@ -1,7 +1,7 @@
 # NSCALE Assets
 
-![NSCALE Logo](./img/nscale/light/logo.svg#gh-light-mode-only)
-![NSCALE Logo](./img/nscale/dark/logo.svg#gh-dark-mode-only)
+![NSCALE Logo](./img/nscale/blue/logo.svg#gh-light-mode-only)
+![NSCALE Logo](./img/nscale/white/logo.svg#gh-dark-mode-only)
 
 This repository contains all static assets used for company branding in various applications.
 These include, but are not limited to, images and CSS.
@@ -19,6 +19,4 @@ https://assets.nscale.com/<path>
 
 Files, where appropriate, are intuitively named:
 
-* `light` - for use on light backgrounds.
-* `dark` - for use on dark backgrounds.
 * `adaptive` - for use on any background, the image will use the `currentColor` for black/white elements. However this requires the SVG contents to be in the DOM, so you must inject the SVG and not use an `<img>` tag.  You can use [svg-inject](https://github.com/iconfu/svg-inject) to perform this task.
