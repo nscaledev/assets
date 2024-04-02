@@ -2,17 +2,29 @@
 <html lang="en">
 	<head>
 		<title>Nscale Email Signature Generator</title>
-		<link rel="icon" href="https://assets.nscale.com/img/nscale/favicon/light.svg" media="(prefers-color-scheme: light)">
-                <link rel="icon" href="https://assets.nscale.com/img/nscale/favicon/dark.svg" media="(prefers-color-scheme: dark)">
-		<link rel="stylesheet" href="https://assets.nscale.com/css/colors.css">
+		<link rel="icon" href="../img/nscale/favicon/favicon.svg" media="(prefers-color-scheme: light)">
+      <link rel="icon" href="../img/nscale/favicon.svg" media="(prefers-color-scheme: dark)">
+		<link rel="stylesheet" href="../css/colors.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 		<style>
 			body {
 				box-sizing: border-box;
+            padding:30px;
+            font-size: 14px;
+            font-family: "DM Sans", sans-serif;
+            color:white;
+            background-color: #171920;
 			}
 			body > img {
-				width: 300px;
+				width: 200px;
 				height: auto;
 			}
+         a {
+            text-decoration: none;
+            color:#5D657B;
+         }
 			form {
 				display: grid;
 				grid-template-columns: auto 1fr;
@@ -20,8 +32,33 @@
 				grid-gap: 1em;
 			}
 			.preview {
-				border: 1px solid var(--brand);
+            padding:10px;
+            color:#171920;
+				border: .5px solid rgba(66, 65, 65, 0.4);
+            border-radius:10px;
+            background-color: white;
 			}
+         input {
+            border-radius:5px;
+            padding:5px;
+            border:.5px solid rgba(66, 65, 65, 0.4);
+         }
+         input.btn {
+            margin-top:20px;
+            border-radius:10px;
+            background-color: #2C64D1;
+            padding:10px;
+            border:.5px solid rgba(255, 213, 221, .4);
+            font-weight:600;
+            cursor:pointer;
+            color:white;
+         }
+         div.details, div.preview {
+            width:45%;
+            float:left;
+            margin:20px;
+         }
+         
 		</style>
 		<script>
 			function copyToClipboard() {
@@ -50,14 +87,10 @@
 		</script>
 	</head>
 	<body>
-		<img src="https://assets.nscale.com/img/nscale/blue/logo.svg" />
+		<img src="../img/nscale/white/logo.svg" />
 		<h1>Email Signature Generator</h1>
-
-		<h2>Instructions</h2>
+      <p>Enter your details in the form below, and double check the preview window. Click the button to copy the info to clipboard. To add your signature to Gmail, follow steps 1-6.</p>
 		<ol>
-			<li>Enter your details in the form below</li>
-			<li>Double check the preview</li>
-			<li>Click the button to copy the signature to the clipboard</li>
 			<li>In Gmail, click on <em>Settings</em> in the top right</li>
 			<li>Select <em>See all settings</em></li>
 			<li>Under <em>Signature</em>, <em>Create new</em> and name it <em>nscale</em>, then paste (e.g. <code>ctl + V</code>) into the textbox</li>
@@ -66,10 +99,10 @@
 			<li>Click <em>Save changes</em> down the bottom</li>
 		</ol>
 
-		<h2>Your Details</h2>
-
+      <div class="details">
+      <h2>Enter Your Details</h2>
 		<form>
-			<label for="forename">Forname</label>
+			<label for="forename">Forename</label>
 			<input id="forename" type="text" placeholder="Joe" required oninput="update(this)"/ >
 
 			<label for="surname">Surname</label>
@@ -85,107 +118,25 @@
 		
 			<input id="phone" type="text" placeholder="(+44) 071234 566789" required oninput="update(this)" />
 		</form>
-
-		<h2>Preview</h2>
+      </div>
+		
 		<div class="preview">
-
+         <h2>Preview</h2>
 			<!-- This is a distillation of https://www.hubspot.com/email-signature-generator -->
-<table id="signature" cellpadding="0" cellspacing="0" style="font-size: large; font-family: Arial;" class="table__StyledTable-sc-1avdl6r-0 kAbRZI">
-   <tbody>
-      <tr>
-         <td>
-            <table cellpadding="0" cellspacing="0" style="width: 100%; font-size: large; font-family: Arial;" class="table__StyledTable-sc-1avdl6r-0 kAbRZI">
-               <tbody>
-                  <tr>
-                     <td height="20"></td>
-                  </tr>
-               </tbody>
-            </table>
-         </td>
-      </tr>
-      <tr>
-         <td>
-            <table cellpadding="0" cellspacing="0" style="font-size: large; font-family: Arial;" class="table__StyledTable-sc-1avdl6r-0 kAbRZI">
-               <tbody>
-                  <tr>
-                     <td width="150" style="vertical-align: middle;"><span style="margin-right: 20px; display: block;" class="template3__ImageContainer-sc-vj949k-0 jeScQV"><img src="https://assets.nscale.com/img/nscale/blue/logo.png" role="presentation" style="max-width: 130px;" width="130" class="image__StyledImage-sc-hupvqm-0 gYgOut"></span></td>
-                     <td style="vertical-align: middle;">
-                        <h2 color="#1F1F1F" style="margin: 0px; font-size: 20px; color: rgb(31, 31, 31); font-weight: 600;" class="name__NameContainer-sc-1m457h3-0 jxbGUj"><span id="pforename">Joe</span><span>&nbsp;</span><span id="psurname">Bloggs</span></h2>
-                        <p color="#1F1F1F" font-size="large" style="margin: 0px; color: rgb(31, 31, 31); font-size: 16px; line-height: 24px;" class="job-title__Container-sc-1hmtp73-0 ifJNJc"><span id="pjobtitle">Janitor</span></p>
-                     </td>
-                     <td width="30">
-                        <div style="width: 30px;"></div>
-                     </td>
-                     <td color="#aabcc0" direction="vertical" width="1" height="auto" style="width: 1px; border-bottom: medium; border-left: 1px solid rgb(170, 188, 192);" class="color-divider__Divider-sc-1h38qjv-0 llIisW"></td>
-                     <td width="30">
-                        <div style="width: 30px;"></div>
-                     </td>
-                     <td style="vertical-align: middle;">
-                        <table cellpadding="0" cellspacing="0" style="font-size: large; font-family: Arial;" class="table__StyledTable-sc-1avdl6r-0 kAbRZI">
-                           <tbody>
-                              <tr style="vertical-align: middle;" height="25">
-                                 <td width="30" style="vertical-align: middle;">
-                                    <table cellpadding="0" cellspacing="0" style="font-size: large; font-family: Arial;" class="table__StyledTable-sc-1avdl6r-0 kAbRZI">
-                                       <tbody>
-                                          <tr>
-                                             <td style="vertical-align: bottom;"><span color="#aabcc0" width="11" style="display: inline-block; background-color: rgb(170, 188, 192);" class="contact-info__IconWrapper-sc-mmkjr6-1 bglVXe"><img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/phone-icon-2x.png" color="#aabcc0" alt="mobilePhone" width="13" style="display: block; background-color: rgb(170, 188, 192);" class="contact-info__ContactLabelIcon-sc-mmkjr6-0 cnkwri"></span></td>
-                                          </tr>
-                                       </tbody>
-                                    </table>
-                                 </td>
-                                 <td style="padding: 0px; color: rgb(31, 31, 31);"><a href="tel:(+44) 07734115369" color="#1F1F1F" style="text-decoration: none; color: rgb(31, 31, 31); font-size: 12px;" class="contact-info__ExternalLink-sc-mmkjr6-2 ibLXSU"><span id="pphone">(+01) 02345 678901</span></a></td>
-                              </tr>
-                              <tr style="vertical-align: middle;" height="25">
-                                 <td width="30" style="vertical-align: middle;">
-                                    <table cellpadding="0" cellspacing="0" style="font-size: large; font-family: Arial;" class="table__StyledTable-sc-1avdl6r-0 kAbRZI">
-                                       <tbody>
-                                          <tr>
-                                             <td style="vertical-align: bottom;"><span color="#aabcc0" width="11" style="display: inline-block; background-color: rgb(170, 188, 192);" class="contact-info__IconWrapper-sc-mmkjr6-1 bglVXe"><img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/email-icon-2x.png" color="#aabcc0" alt="emailAddress" width="13" style="display: block; background-color: rgb(170, 188, 192);" class="contact-info__ContactLabelIcon-sc-mmkjr6-0 cnkwri"></span></td>
-                                          </tr>
-                                       </tbody>
-                                    </table>
-                                 </td>
-                                 <td style="padding: 0px;"><a href="mailto:simon@nscale.com" color="#1F1F1F" style="text-decoration: none; color: rgb(31, 31, 31); font-size: 12px;" class="contact-info__ExternalLink-sc-mmkjr6-2 ibLXSU"><span id="pemail">joe.bloggs@nscale.com</span></a></td>
-                              </tr>
-                              <tr style="vertical-align: middle;" height="25">
-                                 <td width="30" style="vertical-align: middle;">
-                                    <table cellpadding="0" cellspacing="0" style="font-size: large; font-family: Arial;" class="table__StyledTable-sc-1avdl6r-0 kAbRZI">
-                                       <tbody>
-                                          <tr>
-                                             <td style="vertical-align: bottom;"><span color="#aabcc0" width="11" style="display: inline-block; background-color: rgb(170, 188, 192);" class="contact-info__IconWrapper-sc-mmkjr6-1 bglVXe"><img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/link-icon-2x.png" color="#aabcc0" alt="website" width="13" style="display: block; background-color: rgb(170, 188, 192);" class="contact-info__ContactLabelIcon-sc-mmkjr6-0 cnkwri"></span></td>
-                                          </tr>
-                                       </tbody>
-                                    </table>
-                                 </td>
-                                 <td style="padding: 0px;"><a href="https://nscale.com/" color="#1F1F1F" style="text-decoration: none; color: rgb(31, 31, 31); font-size: 12px;" class="contact-info__ExternalLink-sc-mmkjr6-2 ibLXSU"><span>https://nscale.com/</span></a></td>
-                              </tr>
-                           </tbody>
-                        </table>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-         </td>
-      </tr>
-      <tr>
-         <td>
-            <table cellpadding="0" cellspacing="0" style="width: 100%; font-size: large; font-family: Arial;" class="table__StyledTable-sc-1avdl6r-0 kAbRZI">
-               <tbody>
-                  <tr>
-                     <td height="20"></td>
-                  </tr>
-               </tbody>
-            </table>
-         </td>
-      </tr>
-   </tbody>
-</table>
-
-	</div>
-
-	<h2>Copy your Signature</h2>
-	<input type="submit" onclick="copyToClipboard()" value="Copy to clipboard" />
-
-
-</body>
+         <table id="signature" cellpadding="0" width="95%" cellspacing="0" style="margin:10px 0px 10px 0px; border-top:1px solid #DDE2F0; font-size: large; font-family: Arial;" class="table__StyledTable-sc-1avdl6r-0 kAbRZI">
+            <tbody>
+               <tr><td height="20"></td></tr>
+               <tr><td><h2 color="#2D313A" style="margin: 0px; line-height:24px; font-size: 18px; color: rgb(45, 59, 48); font-weight: 600;" class="name__NameContainer-sc-1m457h3-0 jxbGUj"><span id="pforename">John</span><span>&nbsp;</span><span id="psurname">Doe</span></h2></td><tr>
+               <tr><td style="padding: 0px; color: rgb(93, 101, 123);"><p color="#5D657B" font-size="large" style="margin: 0px; color: rgb(93, 101, 123); font-size: 12px; line-height: 18px;" class="job-title__Container-sc-1hmtp73-0 ifJNJc"><span id="pjobtitle">Sales Executive</span></p></td></tr>
+               <tr><td style="padding: 0px; color: rgb(93, 101, 123);"><p color="#5D657B" font-size="large" style="margin: 0px; color: rgb(93, 101, 123); font-size: 12px; line-height: 18px;"  class="contact-info__ExternalLink-sc-mmkjr6-2 ibLXSU"><span id="pphone">(+01) 02345 678901</span></p></td></tr>
+               <tr><td style="padding: 0px; color: rgb(93, 101, 123);"><p color="#5D657B" font-size="large" style="margin: 0px; color: rgb(93, 101, 123); font-size: 12px; line-height: 18px; text-decoration: none;"  class="contact-info__ExternalLink-sc-mmkjr6-2 ibLXSU"><span id="pemail">joe.bloggs@nscale.com</span></p></td></tr>
+               <tr><td height="20"></td></tr>
+               <tr><td><span style="" class="template3__ImageContainer-sc-vj949k-0 jeScQV"><a href="https://nscale.com"><img src="../img/nscale/black/logo.png" role="presentation" style="max-width: 130px;" width="130" class="image__StyledImage-sc-hupvqm-0 gYgOut"></a></span></td></tr>
+               <tr><td height="20"></td></tr>
+            </tbody>
+         </table>
+         <input class="btn" type="submit" onclick="copyToClipboard()" value="Copy to clipboard" />
+      </div>
+	   
+   </body>
 </html>
